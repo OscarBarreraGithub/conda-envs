@@ -1,4 +1,24 @@
-# Set up:
+# Conda Environment Backup
+
+This repo automatically keeps my Conda environments backed up as `.yml` files.
+
+A `.yml` file is a complete specification of a Conda environment, including:
+
+- **Environment name**
+- **Channels** (where packages come from)
+- **Exact package versions** (Conda and pip)
+- **Interpreter version** (e.g. Python 3.10)
+
+## How it works
+
+Whenever I install or update packages, I run a **single command** that:
+
+1. Exports all non-base environments to YAML files
+2. Commits and pushes them to this repo
+
+This keeps everything in sync and reproducible across machines — no manual tracking needed.
+
+# Set Up Your Own Backup:
 Step 1: Create the Git Repo
 ```
 mkdir ~/conda-envs
@@ -8,9 +28,7 @@ touch README.md
 git add README.md
 git commit -m "Initial commit"
 ```
-Connect to GitHub
-Go to GitHub and create a new repo — e.g., conda-envs.
-Back in your terminal:
+Go to github.com and create a new repo — e.g., conda-envs. Back in your terminal, run
 
 ```
 git remote add origin https://github.com/YOUR_USERNAME/conda-envs.git
@@ -18,8 +36,7 @@ git branch -M main
 git push -u origin main
 ```
 
-Step 2: Create Your Script
-export all Conda environments to .yml files.
+Step 2: export all Conda environments to .yml files.
 ```
 nano ~/conda-envs/export_all_envs.sh
 ```
@@ -78,7 +95,7 @@ condapush
 
 Clone your repo:
 ```
-git clone https://github.com/OscarBarreraGithub/conda-envs.git
+git clone https://github.com/YOUR_USERNAME/conda-envs.git
 cd conda-envs
 ```
 
