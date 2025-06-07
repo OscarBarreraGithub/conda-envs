@@ -1,0 +1,14 @@
+((*- extends 'latex/index.tex.j2' -*))
+
+((* block header *))
+((( super() )))                 % keep everything from the parent
+\usepackage{geometry}
+\geometry{margin=1in}
+% ── turn all automatic heading numbers off ──
+\setcounter{secnumdepth}{0}
+((* endblock header *))
+
+((* block date *))
+\date{}                         % remove the date
+((* endblock date *))
+
